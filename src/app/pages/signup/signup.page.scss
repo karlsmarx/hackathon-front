@@ -1,0 +1,42 @@
+.slides{
+
+	&__item{
+		padding: 32px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 100vw;
+		height: 100vh;
+
+		&__holder{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+		}
+
+		&__label{
+			color: #3C3C3C;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: left;
+
+			&--primary{
+				color: var(--ion-color-primary);
+			}
+		}
+
+		&__input{
+			text-align: left;
+			font-size: 26px;
+			color: var(--ion-color-primary);
+			font-weight: bold;
+			flex-grow: 0;
+		}
+
+		&__button{
+			
+			width: 100%;
+		}
+	}
+}

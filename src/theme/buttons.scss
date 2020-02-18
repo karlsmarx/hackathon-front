@@ -1,0 +1,21 @@
+.btn{
+
+	color: white;
+	box-shadow: 2px 5px 4px rgba(#000000, .3);
+	border-radius: 5px;
+	text-transform: none;	
+	font-size: 16px;	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px auto;
+	background:  var(--ion-color-primary);
+	height: 50px;
+	width: 80%;
+	font-size: 16px;
+
+	&--default{
+		background: transparent;
+		border: 1px solid var(--ion-color-primary);
+	}
+}

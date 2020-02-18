@@ -1,0 +1,55 @@
+<ion-content>
+  <ion-slides class="slides" #slides [options]="slideOpts" perView="1">
+    <ion-slide class="slides__item">
+      <span class="slides__item__holder">
+        <ion-icon name="arrow-round-back" (click)="prev()"></ion-icon>
+        <p class="slides__item__label">Ola, para comecar digite seu <span
+            class="slides__item__label--primary">CPF</span> </p>
+        <ion-input [(ngModel)]="userInfo.cpf" [brmasker]="{mask:'000.000.000-00', len:14, type:'num'}"
+          inputmode="numeric" class="slides__item__input" autofocus></ion-input>
+      </span>
+      <button class="btn slides__item__button" (click)="next()">Continuar</button>
+    </ion-slide>
+
+    <ion-slide class="slides__item">
+      <span class="slides__item__holder">
+        <ion-icon name="arrow-round-back" (click)="prev()"></ion-icon>
+        <p class="slides__item__label">Confirme que e voce mesmo, digite sua <span
+            class="slides__item__label--primary">data de nascimento</span> </p>
+        <ion-input [(ngModel)]="userInfo.dateOfBirth" [brmasker]="{mask:'00/00/0000', len:10, type:'num'}"
+          class="slides__item__input" autofocus></ion-input>
+      </span>
+      <button class="btn slides__item__button" (click)="next()">Continuar</button>
+    </ion-slide>
+
+    <ion-slide class="slides__item">
+      <span class="slides__item__holder">
+        <ion-icon name="arrow-round-back" (click)="prev()"></ion-icon>
+        <p class="slides__item__label">Qual o seu <span class="slides__item__label--primary">nome completo</span>?</p>
+        <ion-input [(ngModel)]="userInfo.fullName" class="slides__item__input" autofocus></ion-input>
+      </span>
+      <button class="btn slides__item__button" (click)="next()">Continuar</button>
+    </ion-slide>
+
+    <ion-slide class="slides__item">
+      <span class="slides__item__holder">
+        <ion-icon name="arrow-round-back" (click)="prev()"></ion-icon>
+        <p class="slides__item__label">Diga um <span class="slides__item__label--primary">e-mail</span> para
+          que possamos se comunicar</p>
+        <ion-input [(ngModel)]="userInfo.email" class="slides__item__input" autofocus></ion-input>
+      </span>
+      <button class="btn slides__item__button" (click)="next()">Continuar</button>
+    </ion-slide>
+
+    <ion-slide class="slides__item">
+      <span class="slides__item__holder">
+        <ion-icon name="arrow-round-back" (click)="prev()"></ion-icon>
+        <p class="slides__item__label">Por fim, insira uma <span class="slides__item__label--primary">senha</span> para
+          acessar sua conta</p>
+        <ion-input type="password" [(ngModel)]="userInfo.senha" class="slides__item__input" autofocus></ion-input>
+      </span>
+      <button class="btn slides__item__button" (click)="next()">Cadastrar</button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

@@ -13,12 +13,16 @@ import { AppComponent } from './app.component';
 import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 
+import { NgxMaskModule } from 'ngx-mask'
+
+
 @NgModule({
   declarations: [AppComponent, MenuItemComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    NgxMaskModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
   ],

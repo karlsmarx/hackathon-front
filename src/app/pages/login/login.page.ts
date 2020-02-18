@@ -1,5 +1,5 @@
-import { MenuController } from '@ionic/angular';
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MenuController, IonSlides, NavController } from '@ionic/angular';
+import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -8,12 +8,30 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class LoginPage implements OnInit, OnDestroy {
 
+  @ViewChild ('slides') slides: IonSlides;
+  slideOpts = {
+    zoom: false
+  };
+
+
   constructor(
-    private menuCtrl: MenuController
+    private menuCtrl: MenuController, private navCtrl: NavController
   ) { }
 
   ngOnInit() {
     this.menuCtrl.enable(false);
+  }
+
+  skip(){
+    this.slides.slideTo(2);
+  }
+
+  signup(){
+    this.navCtrl.navigateForward('signup');
+  }
+
+  openHome(){
+    this.navCtrl.navigateForward('home');
   }
 
   ngOnDestroy() {

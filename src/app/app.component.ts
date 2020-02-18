@@ -37,6 +37,11 @@ export class AppComponent implements OnInit {
       url: 'contracts',
       icon: 'document'
     },
+    {
+      title: 'Sair',
+      url: '',
+      icon: 'log-out'
+    },
 
   ];
 
@@ -47,7 +52,7 @@ export class AppComponent implements OnInit {
     private router: Router
   ) {
     this.initializeApp()
-    localStorage.setItem('UserId', '5e4b5645e2e96f4d080121d2')
+   
   }
 
   ngOnInit() {

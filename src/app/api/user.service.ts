@@ -11,7 +11,9 @@ export class UserService {
 	constructor(private requestService: RequestService) { }
 
 	async create(userInfo) {
-		return this.requestService.post(`${this.url}`, userInfo);
+		const response  = await this.requestService.post(`${this.url}`, userInfo);
+		localStorage.setItem('UserId', response._id);
+		return  response;
   }
   
 	async login(userInfo) {

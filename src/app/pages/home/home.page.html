@@ -1,6 +1,6 @@
 <ion-header class="header">
   <div class="header__holder">
-    <ion-menu-button class="header__icon" color="primary"></ion-menu-button>
+    <ion-menu-button color="primary"></ion-menu-button>
     <p class="header__title">
       Seu score {{userInfo.score}}
     </p>
@@ -10,7 +10,7 @@
 
 <ion-content>
   <div class="hero">
-    <img src="./assets/icon/home-back.png" alt="">
+    <img src="./assets/img/home-back.png" alt="">
   </div>
 
   <!-- Seção dos grupos -->
@@ -66,10 +66,10 @@
       <p class="section__title__text">Meus Contratos ({{myLoans.length}})</p>
     </div>
     <ion-slides class="groups__slides" perView="1.5">
-      <ion-slide class="groups__slides__slide" *ngFor="let loan of myLoans">
+      <ion-slide class="groups__slides__slide groups__slides__slide--small" *ngFor="let loan of myLoans">
         <div class="groups__slides__slide__header">
-          <div class="groups__slides__slide__header__text">
-            <div class="groups__slides__slide__header__text__title">{{loan.value}}</div>
+          <div class="groups__slides__slide__header__text groups__slides__slide__header__text--center">
+            <div class="groups__slides__slide__header__text__title">R$ {{loan.value}}</div>
             <div class="groups__slides__slide__header__text__subtitle">Mensalidade <span class="bold">{{transformToMoney(loan.finalValue / loan.months) }} </span>
             </div>
           </div>

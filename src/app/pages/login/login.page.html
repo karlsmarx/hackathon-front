@@ -1,9 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content padding>
-
+<ion-content>
+  <ion-slides class="slides" pager="true" #slides [options]="slideOpts">
+    <ion-slide class="slides__item">
+      <img class="slides__item__img" src="./assets/img/initial-1.png" alt="">
+      <p class="slides__item__text slides__item__text--first">Não consegue empréstimos por estar com o score baixo?
+        Junte-se a um grupo e realize
+        seus sonhos.</p>
+      <div class="slides__item__skip" (click)="skip()">
+        <p>Pular</p>
+        <ion-icon name="arrow-dropright-circle"></ion-icon>
+      </div>
+    </ion-slide>
+    <ion-slide class="slides__item">
+      <img class="slides__item__img" src="./assets/img/initial-2.png" alt="">
+      <p class="slides__item__text slides__item__text--sec">Veja uma prévia sem precisar preencher toda sua vida em
+        formularios infinitos..</p>
+      <div class="slides__item__skip" (click)="skip()">
+        <p>Pular</p>
+        <ion-icon name="arrow-dropright-circle"></ion-icon>
+      </div>
+    </ion-slide>
+    <ion-slide class="slides__item">
+      <img class="slides__item__img slides__item__img--trd" src="./assets/img/initial-3.png" alt="">
+      <p class="slides__item__text slides__item__text--trd">Precisamos apenas do seu cpf e alguns poucos dados para
+        conseguir te liberar para entrar nos grupos.</p>
+      <button class="btn slides__item__button" (click)="login()">Login</button>
+      <button class="btn btn--default slides__item__button slides__item__button--second" (click)="signup()">Cadastre-se</button>
+      <p class="slides__item__link" (click)="openHome()">Ou entre sem se cadastrar</p>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
