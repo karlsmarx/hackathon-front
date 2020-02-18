@@ -1,5 +1,4 @@
 import { Component } from '@angular/core'
-import { LoanService } from '../../api/loan.service'
 import { UserService } from '../../api/user.service'
 
 @Component({
@@ -10,12 +9,34 @@ import { UserService } from '../../api/user.service'
 export class HomePage {
   constructor(private userService: UserService) {}
 
-  async validateLoan() {
-    await this.userService.create({
-      email: 'thalesburakowski134@gmail.com',
-      fullName: 'thales vinicius',
-      cpf: '123.456.789.0112',
-      senha: '123456'
+  userId = ''
+  userInfo: any = {}
+  myGroups: any = []
+  myLoans: any = []
+
+  async ngOnInit() {
+    this.userId = localStorage.getItem('UserId')
+    this.userInfo = await this.userService.read(this.userId)
+    this.myGroups = await this.userService.groups(this.userId)
+    this.myLoans = await this.userService.loans(this.userId)
+
+    //mock
+    this.myLoans.push({
+      status:  'Aguardando',
+      value: 1200,
+      months: 16,
+      userId: this.userId,
+      group: {},
+      approved: [],
+      finalValue: 1350,
+      tax: 1.5
+    })
+  }
+
+  transformToMoney(value: number): any {
+    return value.toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: "BRL"
     })
   }
 }
