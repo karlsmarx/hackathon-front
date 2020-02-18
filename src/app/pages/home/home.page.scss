@@ -91,6 +91,7 @@ ion-conten{
 				&__subtitle{
 					color: #7C7C7C;
 					font-size: 12px;
+					opacity: .7;
 				}
 			}		
 
@@ -120,7 +121,7 @@ ion-conten{
 				text-align: center;
 
 				&__title{
-					color: #7C7C7C;
+					color: rgba(#7C7C7C, .7);
 					font-size: 12px;
 				}
 
@@ -176,4 +177,5 @@ ion-conten{
 
 .bold{
 	font-weight: bold;
+	opacity: 1;
 }
