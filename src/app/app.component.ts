@@ -7,26 +7,38 @@ import { Router, RouterEvent, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html'
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss']
 })
 export class AppComponent implements OnInit {
 
   pages = [
     {
-      title: 'Login',
-      url: '/login',
-      icon: 'log-in'
-    },
-    {
-      title: 'Contact',
-      url: '/tabs/contact',
+      title: 'Perfil',
+      url: '/profile',
       icon: 'person'
     },
     {
-      title: 'About',
-      url: '/tabs/about',
-      icon: 'information-circle'
-    }
+      title: 'Meus grupos',
+      url: 'groups',
+      icon: 'people'
+    },
+    {
+      title: 'Score',
+      url: 'score',
+      icon: 'trophy'
+    },
+    {
+      title: 'Buscar grupos',
+      url: 'search',
+      icon: 'search'
+    },
+    {
+      title: 'Meus contratos',
+      url: 'contracts',
+      icon: 'document'
+    },
+
   ];
 
   constructor(

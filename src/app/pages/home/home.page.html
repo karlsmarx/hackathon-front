@@ -1,18 +1,128 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Home</ion-title>
-  </ion-toolbar>
+<ion-header class="header">
+  <div class="header__holder">
+    <ion-menu-button class="header__icon" color="primary"></ion-menu-button>
+    <p class="header__title">
+      Seu score {{userInfo.score}}
+    </p>
+    <ion-icon class="header__icon" name="search" color="primary"></ion-icon>
+  </div>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+<ion-content>
+  <div class="hero">
+    <img src="./assets/icon/home-back.png" alt="">
+  </div>
+
+  <!-- Seção dos grupos -->
+  <section class="section">
+    <div class="section__title">
+      <ion-icon class="section__title__icon" name="people"></ion-icon>
+      <p class="section__title__text">Meus Grupos</p>
+    </div>
+    <ion-slides class="groups__slides" perView="1.5">
+      <ion-slide class="groups__slides__slide">
+        <div class="groups__slides__slide__header">
+          <div class="groups__slides__slide__header__text">
+            <div class="groups__slides__slide__header__text__title">Empresta Mais</div>
+            <div class="groups__slides__slide__header__text__subtitle">Score do grupo <span class="bold">800</span>
+            </div>
+          </div>
+          <div class="groups__slides__slide__header__pictures">
+            <img class="groups__slides__slide__header__pictures__image"
+              src="https://images.unsplash.com/photo-1552072805-2a9039d00e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+              alt="">
+            <img class="groups__slides__slide__header__pictures__image"
+              src="https://images.unsplash.com/photo-1552072805-2a9039d00e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+              alt="">
+          </div>
+        </div>
+        <div class="groups__slides__slide__info">
+          <div class="groups__slides__slide__info__group">
+            <div class="groups__slides__slide__info__group__title">Emprestimos</div>
+            <div class="groups__slides__slide__info__group__value">20</div>
+          </div>
+          <div class="groups__slides__slide__info__group">
+            <div class="groups__slides__slide__info__group__title">Media Economia</div>
+            <div class="groups__slides__slide__info__group__value">180,00</div>
+          </div>
+          <div class="groups__slides__slide__info__group">
+            <div class="groups__slides__slide__info__group__title">Média de juros</div>
+            <div class="groups__slides__slide__info__group__value">0,5% a.m</div>
+          </div>
+        </div>
+        <div class="groups__slides__slide__footer">
+          <div class="groups__slides__slide__footer__title">Ver Grupo</div>
+          <ion-icon class="groups__slides__slide__footer__icon" name="arrow-round-forward"></ion-icon>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="groups__slides__slide">
+        <div class="groups__slides__slide__header">
+          <div class="groups__slides__slide__header__text">
+            <div class="groups__slides__slide__header__text__title">Empresta Mais</div>
+            <div class="groups__slides__slide__header__text__subtitle">Score do grupo <span class="bold">800</span>
+            </div>
+          </div>
+          <div class="groups__slides__slide__header__pictures">
+            <img class="groups__slides__slide__header__pictures__image"
+              src="https://images.unsplash.com/photo-1552072805-2a9039d00e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+              alt="">
+            <img class="groups__slides__slide__header__pictures__image"
+              src="https://images.unsplash.com/photo-1552072805-2a9039d00e57?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+              alt="">
+          </div>
+        </div>
+        <div class="groups__slides__slide__info">
+          <div class="groups__slides__slide__info__group">
+            <div class="groups__slides__slide__info__group__title">Emprestimos</div>
+            <div class="groups__slides__slide__info__group__value">20</div>
+          </div>
+          <div class="groups__slides__slide__info__group">
+            <div class="groups__slides__slide__info__group__title">Media Economia</div>
+            <div class="groups__slides__slide__info__group__value">180,00</div>
+          </div>
+          <div class="groups__slides__slide__info__group">
+            <div class="groups__slides__slide__info__group__title">Média de juros</div>
+            <div class="groups__slides__slide__info__group__value">0,5% a.m</div>
+          </div>
+        </div>
+        <div class="groups__slides__slide__footer">
+          <div class="groups__slides__slide__footer__title">Ver Grupo</div>
+          <ion-icon class="groups__slides__slide__footer__icon" name="arrow-round-forward"></ion-icon>
+        </div>
+      </ion-slide>
 
 
-  <ion-button (click)="validateLoan()">
-    Validar emprestimo
-  </ion-button>
+    </ion-slides>
+  </section>
+
+
+  <!-- Seção dos contratos -->
+  <section class="section">
+    <div class="section__title">
+      <ion-icon class="section__title__icon" name="document"></ion-icon>
+      <p class="section__title__text">Meus Contratos</p>
+    </div>
+    <ion-slides class="documents__slides">
+      <ion-slide class="documents__slides__slide">
+        <p class="documents__slides__slide__money">
+          R$ 1.500,00
+        </p>
+        <p class="documents__slides__slide__month">
+          Mensalidade R$ 256,00
+        </p>
+        <div class="documents__slides__slide__info">
+          <div class="documents__slides__slide__info__text">
+            <p class="documents__slides__slide__info__text__name">Parcelas</p>
+            <p class="documents__slides__slide__info__text__value">6</p>
+          </div>
+          <div class="documents__slides__slide__info__text">
+            <p class="documents__slides__slide__info__text__name">juros</p>
+            <p class="documents__slides__slide__info__text__value">0,5% a.m</p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+  </section>
+
 </ion-content>

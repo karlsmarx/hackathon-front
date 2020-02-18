@@ -8,6 +8,10 @@ import { LoanService } from '../../api/loan.service';
 })
 export class HomePage {
 
+  private userInfo: any = {
+    score: 680
+  }
+
   constructor(private loanService: LoanService){
 
   }
