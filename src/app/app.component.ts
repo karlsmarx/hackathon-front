@@ -1,16 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { Platform } from '@ionic/angular'
+import { SplashScreen } from '@ionic-native/splash-screen/ngx'
+import { StatusBar } from '@ionic-native/status-bar/ngx'
+import { Router, RouterEvent, NavigationEnd } from '@angular/router'
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent implements OnInit {
-
   pages = [
     {
       title: 'Login',
@@ -27,7 +26,7 @@ export class AppComponent implements OnInit {
       url: '/tabs/about',
       icon: 'information-circle'
     }
-  ];
+  ]
 
   constructor(
     private platform: Platform,
@@ -35,23 +34,24 @@ export class AppComponent implements OnInit {
     private statusBar: StatusBar,
     private router: Router
   ) {
-    this.initializeApp();
+    this.initializeApp()
+    localStorage.setItem('UserId', '5e4b5645e2e96f4d080121d2')
   }
 
   ngOnInit() {
     this.router.events.subscribe((event: RouterEvent) => {
       if (event instanceof NavigationEnd) {
-        this.pages.map( p => {
-          return p['active'] = (event.url === p.url);
-        });
+        this.pages.map(p => {
+          return (p['active'] = event.url === p.url)
+        })
       }
-    });
+    })
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
+      this.statusBar.styleDefault()
+      this.splashScreen.hide()
+    })
   }
 }
