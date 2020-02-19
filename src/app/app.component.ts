@@ -14,27 +14,27 @@ export class AppComponent implements OnInit {
   pages = [
     {
       title: 'Perfil',
-      url: '/profile',
+      url: null,
       icon: 'person'
     },
     {
       title: 'Meus grupos',
-      url: 'groups',
+      url: null,
       icon: 'people'
     },
     {
       title: 'Score',
-      url: 'score',
+      url: null,
       icon: 'trophy'
     },
     {
       title: 'Buscar grupos',
-      url: 'search',
+      url: null,
       icon: 'search'
     },
     {
       title: 'Meus contratos',
-      url: 'contracts',
+      url: null,
       icon: 'document'
     },
     {
