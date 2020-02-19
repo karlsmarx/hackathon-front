@@ -5,7 +5,7 @@ import { RequestService } from './request.service'
   providedIn: 'root'
 })
 export class LoanService {
-  private url: string = 'http://localhost:3333/loan'
+  private url: string = 'https://hackathon.karls.dev/loan'
 
   constructor(private requestService: RequestService) {}
 

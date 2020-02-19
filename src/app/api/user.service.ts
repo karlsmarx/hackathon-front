@@ -6,7 +6,7 @@ import { RequestService } from './request.service';
 })
 export class UserService {
 
-  private url: string = 'http://localhost:3333/user';
+  private url: string = 'https://hackathon.karls.dev/user';
 
 	constructor(private requestService: RequestService) { }
 
@@ -35,6 +35,4 @@ export class UserService {
 	async loans(userId) {
 		return this.requestService.get(`${this.url}/${userId}/loans`);
 	}
-
-
 }

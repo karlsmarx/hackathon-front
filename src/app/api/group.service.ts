@@ -5,7 +5,7 @@ import { RequestService } from './request.service'
   providedIn: 'root'
 })
 export class GroupService {
-  private url: string = 'http://localhost:3333/group'
+  private url: string = 'https://hackathon.karls.dev/group'
 
   constructor(private requestService: RequestService) {}
 

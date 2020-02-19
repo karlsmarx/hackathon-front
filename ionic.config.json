@@ -1,5 +1,7 @@
 {
   "name": "meu-starter.tabs-sidemenu.ionic-v4",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

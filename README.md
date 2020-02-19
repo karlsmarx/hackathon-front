@@ -1,6 +1,6 @@
-<h1 align="center">meu-starter.tabs-sidemenu.ionic-v4</h1>
+<h1 align="center">Loan App</h1>
 <div align="center">
-  <strong>Combine side menu, tabs and login page with Ionic 4</strong>
+  <strong>A união faz o empréstimo</strong>
 </div>
 <div align="center">
   <h3>
@@ -14,7 +14,7 @@
 
 * [Download the installer](https://nodejs.org/) for Node.js 6 or greater.
 * Install the ionic CLI globally: `npm install -g ionic`
-* Clone this repository: `git clone https://github.com/meumobi/meu-starter.tabs-sidemenu.ionic-v4.git`.
+* Clone this repository: `git clone https://github.com/karlsmarx/hackathon-front.git`.
 * Run `npm install` from the project root.
 * Run `ionic serve` in a terminal from the project root.
 * Profit. :tada:

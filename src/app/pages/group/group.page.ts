@@ -1,14 +1,13 @@
 import { Component } from '@angular/core'
 import { UserService } from '../../api/user.service'
-import { NavController } from '@ionic/angular'
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
+  selector: 'app-group',
+  templateUrl: 'group.page.html',
+  styleUrls: ['group.page.scss']
 })
-export class HomePage {
-  constructor(private userService: UserService, private navCtrl: NavController) {}
+export class GroupPage {
+  constructor(private userService: UserService) {}
 
   userId = ''
   userInfo: any = {}
@@ -20,8 +19,6 @@ export class HomePage {
     this.userInfo = await this.userService.read(this.userId)
     this.myGroups = await this.userService.groups(this.userId)
     this.myLoans = await this.userService.loans(this.userId)
-
-    // this.openGroup({});
 
     //mock
     this.myLoans.push({
@@ -41,9 +38,5 @@ export class HomePage {
       style: 'currency',
       currency: "BRL"
     })
-  }
-
-  openGroup(group){
-    this.navCtrl.navigateForward('group');
   }
 }

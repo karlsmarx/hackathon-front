@@ -1,0 +1,21 @@
+<ion-header class="header">
+  <div class="header__holder">
+    <ion-icon class="header__icon" name="arrow-round-back"></ion-icon>
+    <p class="header__title">
+        Nome do grupo
+    </p>    
+  </div>
+  <ion-segment (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="friends">
+      <ion-label>Friends</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="enemies">
+      <ion-label>Enemies</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-header>
+
+<ion-content>
+  
+
+</ion-content>

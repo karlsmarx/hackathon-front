@@ -1,11 +1,13 @@
 <ion-header class="header">
-  <div class="header__holder">
-    <ion-menu-button color="primary"></ion-menu-button>
-    <p class="header__title">
-      Seu score {{userInfo.score}}
-    </p>
-    <ion-icon class="header__icon" name="search" color="primary"></ion-icon>
-  </div>
+  <ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button color="primary" autoHide="false"></ion-menu-button>
+		</ion-buttons>
+    <ion-title  class="header__title"> Seu score {{userInfo.score}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-icon class="header__icon" name="search" color="primary"></ion-icon>
+		</ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content>
@@ -50,7 +52,7 @@
             <div class="groups__slides__slide__info__group__value">0,5% a.m</div>
           </div>
         </div>
-        <div class="groups__slides__slide__footer">
+        <div class="groups__slides__slide__footer" (click)="openGroup(group)">
           <div class="groups__slides__slide__footer__title">Ver Grupo</div>
           <ion-icon class="groups__slides__slide__footer__icon" name="arrow-round-forward"></ion-icon>
         </div>
