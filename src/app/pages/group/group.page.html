@@ -1,21 +1,83 @@
 <ion-header class="header">
-  <div class="header__holder">
-    <ion-icon class="header__icon" name="arrow-round-back"></ion-icon>
-    <p class="header__title">
-        Nome do grupo
-    </p>    
-  </div>
-  <ion-segment (ionChange)="segmentChanged($event)">
-    <ion-segment-button value="friends">
-      <ion-label>Friends</ion-label>
+  <ion-toolbar>
+    <ion-buttons slot="start" (click)="goBack()">
+      <ion-icon class="header__icon" name="arrow-round-back"></ion-icon>
+    </ion-buttons>
+    <ion-title class="header__title"> Nome do grupo</ion-title>
+    <ion-buttons slot="end" style="opacity: 0;">
+      <ion-icon class="header__icon" name="arrow-round-back" style="opacity: 0;"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-segment class="segment" (ionChange)="segmentChanged($event.detail.value)" [value]="tab">
+    <ion-segment-button class="segment__button" mode="ios" color="primary" value="DETAILS">
+      <ion-label class="segment__button__label">Detalhes</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="enemies">
-      <ion-label>Enemies</ion-label>
+    <ion-segment-button class="segment__button" mode="ios" color="primary" value="LOAN">
+      <ion-label class="segment__button__label">Pedir Empréstimo</ion-label>
+    </ion-segment-button>
+    <ion-segment-button class="segment__button" mode="ios" color="primary" value="REQUEST">
+      <ion-label class="segment__button__label">Solicitações</ion-label>
     </ion-segment-button>
   </ion-segment>
 </ion-header>
 
+
 <ion-content>
-  
+
+  <div class="general-title" *ngIf="tab != 'DETAILS'; else details">
+    Essa função estará<br />
+    Disponivel em <span class="general-title--primary">Breve!</span>
+  </div>
+
+  <ng-template #details>
+    <div class="compare-title">
+      <img src="./assets/icon/chart-line.svg" alt="" class="compare-title__icon">
+      <div class="compare-title__text">Comparativo</div>
+    </div>
+
+    <div class="compare-box">
+      <div class="compare-box__grid">
+        <div class="compare-box__grid__item">
+          <ion-icon name="flag" alt="" class="compare-box__grid__item__img" color="primary"></ion-icon>
+          <div class="compare-box__grid__item__label">Score</div>
+          <div class="compare-box__grid__item__value"> {{box == 'YOU' ? '600' : '800' }}</div>
+        </div>
+
+        <div class="compare-box__grid__item">
+          <ion-icon name="stats" alt="" class="compare-box__grid__item__img" color="primary"></ion-icon>
+          <div class="compare-box__grid__item__label">Média Juros</div>
+          <div class="compare-box__grid__item__value"> {{box == 'YOU' ? '1,5% a.m' : '0,5% a.m' }} </div>
+        </div>
+
+        <div class="compare-box__grid__item">
+          <ion-icon name="bookmark" alt="" class="compare-box__grid__item__img" color="primary"></ion-icon>
+          <div class="compare-box__grid__item__label">Parcelas</div>
+          <div class="compare-box__grid__item__value"> {{box == 'YOU' ? 'Até 6' : 'Até 12' }}</div>
+        </div>
+
+        <div class="compare-box__grid__item">
+          <ion-icon name="logo-usd" alt="" class="compare-box__grid__item__img" color="primary"></ion-icon>
+          <div class="compare-box__grid__item__label">Valor Máximo</div>
+          <div class="compare-box__grid__item__value"> {{box == 'YOU' ? ' Até 2.000,00' : ' Até 3.000,00' }}</div>
+        </div>
+      </div>
+      <ion-segment class="segment compare-box__footer" (ionChange)="changeBox($event.detail.value)" [value]="box">
+        <ion-segment-button class="segment__button" mode="ios" color="primary" value="YOU">
+          <ion-label class="segment__button__label">Você</ion-label>
+        </ion-segment-button>
+        <ion-segment-button class="segment__button" mode="ios" color="primary" value="GROUP">
+          <ion-label class="segment__button__label">Grupo</ion-label>
+        </ion-segment-button>
+
+      </ion-segment>
+    </div>
+
+    <div class="compare-title">
+      <img src="./assets/icon/users.svg" alt="" class="compare-title__icon">
+      <div class="compare-title__text">Integrantes (10)</div>
+    </div>
+
+  </ng-template>
 
 </ion-content>

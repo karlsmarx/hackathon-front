@@ -22,11 +22,11 @@
       <p class="section__title__text">Meus Grupos ({{myGroups.length}})</p>
     </div>
     <ion-slides class="groups__slides" perView="1.5">
-      <ion-slide class="groups__slides__slide" *ngFor="let group of myGroups">
+      <ion-slide class="groups__slides__slide" *ngFor="let group of myGroups"  (click)="openGroup(group)">
         <div class="groups__slides__slide__header">
           <div class="groups__slides__slide__header__text">
-            <div class="groups__slides__slide__header__text__title">{{group.name}}</div>
-            <div class="groups__slides__slide__header__text__subtitle">Score do grupo <span class="bold">{{group.score}}</span>
+            <div class="groups__slides__slide__header__text__title">{{group.name || 'Unidos'}}</div>
+            <div class="groups__slides__slide__header__text__subtitle">Score do grupo <span class="bold">{{group.score || '850'}}</span>
             </div>
           </div>
           <div class="groups__slides__slide__header__pictures">
@@ -52,7 +52,7 @@
             <div class="groups__slides__slide__info__group__value">0,5% a.m</div>
           </div>
         </div>
-        <div class="groups__slides__slide__footer" (click)="openGroup(group)">
+        <div class="groups__slides__slide__footer">
           <div class="groups__slides__slide__footer__title">Ver Grupo</div>
           <ion-icon class="groups__slides__slide__footer__icon" name="arrow-round-forward"></ion-icon>
         </div>

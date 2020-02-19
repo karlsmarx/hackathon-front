@@ -19,9 +19,11 @@ export class HomePage {
     this.userId = localStorage.getItem('UserId')
     this.userInfo = await this.userService.read(this.userId)
     this.myGroups = await this.userService.groups(this.userId)
-    this.myLoans = await this.userService.loans(this.userId)
 
-    // this.openGroup({});
+    if(!this.myGroups.length){      
+      this.myGroups = [1,2]
+    }
+    this.myLoans = await this.userService.loans(this.userId)
 
     //mock
     this.myLoans.push({
