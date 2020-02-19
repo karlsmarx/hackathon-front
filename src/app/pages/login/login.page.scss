@@ -90,5 +90,43 @@
 			z-index: 999;
 			font-size: 14px;
 		}
+
+		&__icon{
+			color: #3C3C3C;
+		}
+
+		&__input{
+			flex-grow: 0;
+			height: 50px;
+			text-align: left;
+			color: #3C3C3C;
+			font-weight: bold;
+			--placeholder-font-style: italic;
+		}
+
+		&__button-form{
+			width: 100%;
+			margin: 0;
+		}
+
+		&--form{
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
+			padding: 32px;
+			background: white;
+
+			&__title{
+				color: var(--ion-color-primary);
+				font-size: 28px;
+				font-weight: bold;
+				margin: 10vh 0 0 0;
+				text-align: left;
+			}
+		}
 	}
+}
+
+.margin{
+	margin: 8vh 0;
 }

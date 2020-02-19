@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-slides class="slides" pager="true" #slides [options]="slideOpts">
+  <ion-slides class="slides" [pager]="showPager" #slides [options]="slideOpts">
     <ion-slide class="slides__item">
       <img class="slides__item__img" src="./assets/img/initial-1.png" alt="">
       <p class="slides__item__text slides__item__text--first">Não consegue empréstimos por estar com o score baixo?
@@ -23,9 +23,18 @@
       <img class="slides__item__img slides__item__img--trd" src="./assets/img/initial-3.png" alt="">
       <p class="slides__item__text slides__item__text--trd">Precisamos apenas do seu cpf e alguns poucos dados para
         conseguir te liberar para entrar nos grupos.</p>
-      <button class="btn slides__item__button" (click)="login()">Login</button>
+      <button class="btn slides__item__button" (click)="goToLogin()">Login</button>
       <button class="btn btn--default slides__item__button slides__item__button--second" (click)="signup()">Cadastre-se</button>
       <p class="slides__item__link" (click)="openHome()">Ou entre sem se cadastrar</p>
+    </ion-slide>
+    <ion-slide class="slides__item slides__item--form">
+      <ion-icon class="slides__item__icon" name="arrow-round-back" (click)="prev()"></ion-icon>
+      <p class="slides__item--form__title">Bem Vindo de volta!</p>
+      <span class="margin">
+        <ion-input [(ngModel)]="loginInfo.email" class="slides__item__input" placeholder="E-mail"></ion-input>
+        <ion-input [(ngModel)]="loginInfo.senha" type="password" class="slides__item__input" placeholder="Senha"></ion-input>
+      </span>     
+     <button class="btn slides__item__button-form" (click)="login()">Entrar</button>
     </ion-slide>
   </ion-slides>
 </ion-content>
